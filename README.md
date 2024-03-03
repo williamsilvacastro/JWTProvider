@@ -49,14 +49,14 @@ Para executar este projeto em seu ambiente local, siga os passos abaixo:
 
 2. **Clonar o Repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-projeto.git
-   cd nome-do-projeto
+   git clone https://github.com/williamsilvacastro/JWTProvider.git
+   cd JWTProvider
    ```
 
 3. **Compilar e Executar:**
    ```bash
    mvn clean install
-   java -jar target/nome-do-projeto.jar
+   java -jar target/JWTProvider-0.0.1-SNAPSHOT.jar
    ```
 
 4. **Acessar a Aplicação:**
