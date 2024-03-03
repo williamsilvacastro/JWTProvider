@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="3.352" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="br.com.wscastro.JWTProvider.Services.JwtServicesTest" time="0.005" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -64,95 +64,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testJwtValidation" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.788">
-    <system-out><![CDATA[18:39:24.551 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.com.wscastro.JWTProvider.Controllers.JwtValidationTest]: JwtValidationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-18:39:24.665 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.com.wscastro.JWTProvider.JwtProviderApplication for test class br.com.wscastro.JWTProvider.Controllers.JwtValidationTest
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::       (v3.2.4-SNAPSHOT)
-
-2024-03-03T18:39:25.038-03:00  INFO 23244 --- [           main] b.c.w.J.Controllers.JwtValidationTest    : Starting JwtValidationTest using Java 21.0.2 with PID 23244 (started by willi in C:\Users\willi\OneDrive\Documentos\Codigos\DesafioBackendItau\JWTProvider)
-2024-03-03T18:39:25.039-03:00  INFO 23244 --- [           main] b.c.w.J.Controllers.JwtValidationTest    : No active profile set, falling back to 1 default profile: "default"
-2024-03-03T18:39:25.599-03:00  INFO 23244 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-03-03T18:39:25.616-03:00  INFO 23244 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
-2024-03-03T18:39:25.964-03:00  WARN 23244 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 062ff4e0-b5cf-4f5b-85ab-17667a1933fb
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2024-03-03T18:39:26.249-03:00  INFO 23244 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@28babeca, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ad9b8d3, org.springframework.security.web.context.SecurityContextHolderFilter@77b3752b, org.springframework.security.web.header.HeaderWriterFilter@764b14b8, org.springframework.web.filter.CorsFilter@168ad26f, org.springframework.security.web.authentication.logout.LogoutFilter@697d6ded, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@b4732dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@319642db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59498d94, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f93bf0a, org.springframework.security.web.session.SessionManagementFilter@62aeddc8, org.springframework.security.web.access.ExceptionTranslationFilter@1bbddada, org.springframework.security.web.access.intercept.AuthorizationFilter@2ed9f6f8]
-2024-03-03T18:39:26.514-03:00  INFO 23244 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-03-03T18:39:26.706-03:00  INFO 23244 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:263382e4-aed4-4fdb-8550-3142e0abe481 user=SA
-2024-03-03T18:39:26.708-03:00  INFO 23244 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-03-03T18:39:26.840-03:00  INFO 23244 --- [           main] b.c.w.J.Controllers.JwtValidationTest    : Started JwtValidationTest in 2.028 seconds (process running for 2.988)
-2024-03-03T18:39:27.548-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.548-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.549-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-]]></system-out>
-    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\willi\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.12\byte-buddy-agent-1.14.12.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-]]></system-err>
-  </testcase>
-  <testcase name="testJwtValidationWithException" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.006">
-    <system-out><![CDATA[2024-03-03T18:39:27.647-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.647-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.648-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-]]></system-out>
-  </testcase>
-  <testcase name="testJwtValidationCaso4WithException" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.029">
-    <system-out><![CDATA[2024-03-03T18:39:27.653-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.653-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.653-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-]]></system-out>
-  </testcase>
-  <testcase name="testJwtValidationCaso3WithException" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.005">
-    <system-out><![CDATA[2024-03-03T18:39:27.684-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.685-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.685-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-]]></system-out>
-  </testcase>
-  <testcase name="testJwtValidationCaso2WithException" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.005">
-    <system-out><![CDATA[2024-03-03T18:39:27.691-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.691-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.691-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-]]></system-out>
-  </testcase>
-  <testcase name="testJwtValidationCaso1WithException" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.007">
-    <system-out><![CDATA[2024-03-03T18:39:27.697-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.698-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.698-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-]]></system-out>
-  </testcase>
-  <testcase name="testJwtValidationCaso1" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.009">
-    <system-out><![CDATA[2024-03-03T18:39:27.705-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.705-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.706-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-]]></system-out>
-  </testcase>
-  <testcase name="testJwtValidationCaso2" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.004">
-    <system-out><![CDATA[2024-03-03T18:39:27.716-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.716-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.716-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-]]></system-out>
-  </testcase>
-  <testcase name="testJwtValidationCaso3" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.004">
-    <system-out><![CDATA[2024-03-03T18:39:27.721-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.721-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.721-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-]]></system-out>
-  </testcase>
-  <testcase name="testJwtValidationCaso4" classname="br.com.wscastro.JWTProvider.Controllers.JwtValidationTest" time="0.003">
-    <system-out><![CDATA[2024-03-03T18:39:27.725-03:00  INFO 23244 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-03-03T18:39:27.726-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-03-03T18:39:27.726-03:00  INFO 23244 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-]]></system-out>
-  </testcase>
+  <testcase name="testSplitJwt" classname="br.com.wscastro.JWTProvider.Services.JwtServicesTest" time="0.001"/>
+  <testcase name="testParseWithoutValidation" classname="br.com.wscastro.JWTProvider.Services.JwtServicesTest" time="0.0"/>
+  <testcase name="testSplitJwtInvalidDelimiterCount" classname="br.com.wscastro.JWTProvider.Services.JwtServicesTest" time="0.001"/>
+  <testcase name="testParseWithoutValidationInvalidJwt" classname="br.com.wscastro.JWTProvider.Services.JwtServicesTest" time="0.001"/>
 </testsuite>

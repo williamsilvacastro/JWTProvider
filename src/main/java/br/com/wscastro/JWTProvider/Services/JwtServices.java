@@ -12,12 +12,10 @@ public class JwtServices {
 
 
     public static List<String> parseWithoutValidation(String jwt) throws Exception {
-        String base64UrlEncodedHeader = null;
-        String base64UrlEncodedPayload = null;
         List<String> headerAndPayloadDecoded = null;
         try{
             // Split the JWT and decode each part
-            headerAndPayloadDecoded = JwtServices.splitJwt(jwt, base64UrlEncodedHeader, base64UrlEncodedPayload)
+            headerAndPayloadDecoded = JwtServices.splitJwt(jwt)
                     .stream()
                     .map(s -> (new String(Base64.getDecoder().decode(s))))
                     .toList();
@@ -28,7 +26,9 @@ public class JwtServices {
         return headerAndPayloadDecoded;
     }
 
-    public static List<String> splitJwt(String jwt, String base64UrlEncodedHeader, String base64UrlEncodedPayload) throws Exception {
+    public static List<String> splitJwt(String jwt ) throws Exception {
+        String base64UrlEncodedHeader = null;
+        String base64UrlEncodedPayload = null;
         int delimiterCount = 0;
         StringBuilder sb = new StringBuilder(128);
         // Converte a string JWT em um array de caracteres

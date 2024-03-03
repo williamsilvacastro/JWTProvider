@@ -33,7 +33,7 @@ public class ClaimsServices {
             validSeedField(jsonNode);
 
         }catch (JsonParseException e){
-            throw new Exception("Invalid jwt payload Json");
+            throw new JsonParseException("Invalid jwt payload Json");
         }
         return true;
     }
