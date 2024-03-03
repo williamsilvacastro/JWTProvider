@@ -16,6 +16,7 @@ public class JwtServices {
         String base64UrlEncodedPayload = null;
         List<String> headerAndPayloadDecoded = null;
         try{
+            // Split the JWT and decode each part
             headerAndPayloadDecoded = JwtServices.splitJwt(jwt, base64UrlEncodedHeader, base64UrlEncodedPayload)
                     .stream()
                     .map(s -> (new String(Base64.getDecoder().decode(s))))
@@ -28,25 +29,27 @@ public class JwtServices {
     }
 
     public static List<String> splitJwt(String jwt, String base64UrlEncodedHeader, String base64UrlEncodedPayload) throws Exception {
-
         int delimiterCount = 0;
         StringBuilder sb = new StringBuilder(128);
-        char[] arr$ = jwt.toCharArray();
-        int len$ = arr$.length;
-        String  token = null;
+        // Converte a string JWT em um array de caracteres
+        char[] arr = jwt.toCharArray();
 
-        for (char c : arr$) {
+        // iteração em cada caractere na string JWT
+        for (char c : arr) {
             if (c == '.') {
+                // limpa o StringBuilder e pega a sequência de caracteres do StringBuilder
                 CharSequence tokenSeq = Strings.clean(sb);
-                token = tokenSeq != null ? tokenSeq.toString() : null;
+                String token = tokenSeq != null ? tokenSeq.toString() : null;
                 if (delimiterCount == 0) {
                     base64UrlEncodedHeader = token;
                 } else if (delimiterCount == 1) {
                     base64UrlEncodedPayload = token;
                 }
                 ++delimiterCount;
+                // limpa o StringBuilder para o proximo token
                 sb.setLength(0);
             } else {
+                // adiciona o caractere ao StringBuilder
                 sb.append(c);
             }
         }
