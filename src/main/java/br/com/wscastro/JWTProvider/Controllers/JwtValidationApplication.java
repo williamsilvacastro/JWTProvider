@@ -1,5 +1,6 @@
 package br.com.wscastro.JWTProvider.Controllers;
 
+import br.com.wscastro.JWTProvider.Infra.RestExceptionHandler;
 import br.com.wscastro.JWTProvider.Services.ClaimsServices;
 import br.com.wscastro.JWTProvider.Services.JwtServices;
 import com.fasterxml.jackson.core.JsonParseException;
@@ -25,21 +26,19 @@ public class JwtValidationApplication {
     public Boolean validateJwt(@RequestBody String jwt) {
         try {
             List<String> jwtParsedToString = JwtServices.parseWithoutValidation(jwt);
-            return ClaimsServices.validateJson(jwtParsedToString.get(1));
+            Boolean isValid = ClaimsServices.validateJson(jwtParsedToString.get(1));
+            return isValid;
         } catch (Exception e) {
             return false;
         }
     }
 
     @PostMapping("/validate-jwt/with-exceptions")
-    public ResponseEntity validateJwtWithExceptions(@RequestBody String jwt) {
-        try {
-            List<String> jwtParsedToString = JwtServices.parseWithoutValidation(jwt);
-            return ResponseEntity.ok(ClaimsServices.validateJson(jwtParsedToString.get(1)));
-        } catch (Exception e){
-            return ResponseEntity.status(403)
-                    .body(e.getMessage());
-        }
+
+    public ResponseEntity validateJwtWithExceptions(@RequestBody String jwt) throws Exception {
+        List<String> jwtParsedToString = JwtServices.parseWithoutValidation(jwt);
+        Boolean isValid = ClaimsServices.validateJson(jwtParsedToString.get(1));
+        return ResponseEntity.ok(isValid);
     }
 
 }

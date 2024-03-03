@@ -96,7 +96,7 @@ public class JwtValidationTest {
         String jwt = "eyJhbGciOiJzI1NiJ9.dfsdfsfryJSr2xrIjoiQWRtaW4iLCJTZrkIjoiNzg0MSIsIk5hbrUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05fsdfsIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg";
         mvc.perform(post("/auth/validate-jwt/with-exceptions").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
-                        .isForbidden())
+                        .isBadRequest())
                 .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("Invalid jwt payload Json")));
     }
 
@@ -106,7 +106,7 @@ public class JwtValidationTest {
         String jwt = "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiRXh0ZXJuYWwiLCJTZWVkIjoiODgwMzciLCJOYW1lIjoiTTRyaWEgT2xpdmlhIn0.6YD73XWZYQSSMDf6H0i3-kylz1-TY_Yt6h1cV2Ku-Qs";
         mvc.perform(post("/auth/validate-jwt/with-exceptions").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
-                        .isForbidden())
+                        .isBadRequest())
                 .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("Invalid Name")));
     }
 
@@ -116,7 +116,7 @@ public class JwtValidationTest {
         String jwt = "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiTWVtYmVyIiwiT3JnIjoiQlIiLCJTZWVkIjoiMTQ2MjciLCJOYW1lIjoiVmFsZGlyIEFyYW5oYSJ9.cmrXV_Flm5mfdpfNUVopY_I2zeJUy4EZ4i3Fea98zvY";
         mvc.perform(post("/auth/validate-jwt/with-exceptions").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
-                        .isForbidden())
+                        .isBadRequest())
                 .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("Json must have 3 fields")));
     }
 
