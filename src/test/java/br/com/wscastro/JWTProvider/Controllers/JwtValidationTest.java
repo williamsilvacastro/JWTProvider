@@ -1,6 +1,7 @@
 package br.com.wscastro.JWTProvider.Controllers;
 
 
+import io.jsonwebtoken.lang.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +49,7 @@ public class JwtValidationTest {
         mvc.perform(post("/auth/validate-jwt").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
                         .isOk())
-                .andExpect(result -> result.getResponse().getContentAsString().contains("false"));
+                .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("false")));
     }
 
     @Test
@@ -58,7 +59,7 @@ public class JwtValidationTest {
         mvc.perform(post("/auth/validate-jwt").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
                         .isOk())
-                .andExpect(result -> result.getResponse().getContentAsString().contains("false"));
+                .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("false")));
     }
 
     @Test
@@ -68,7 +69,7 @@ public class JwtValidationTest {
         mvc.perform(post("/auth/validate-jwt").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
                         .isOk())
-                .andExpect(result -> result.getResponse().getContentAsString().contains("false"));
+                .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("false")));
     }
 
     @Test
@@ -86,7 +87,7 @@ public class JwtValidationTest {
         mvc.perform(post("/auth/validate-jwt/with-exceptions").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
                         .isOk())
-                .andExpect(result -> result.getResponse().getContentAsString().contains("true"));
+                .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("true")));
     }
 
     @Test
@@ -96,7 +97,7 @@ public class JwtValidationTest {
         mvc.perform(post("/auth/validate-jwt/with-exceptions").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
                         .isForbidden())
-                .andExpect(result -> result.getResponse().getContentAsString().contains("Invalid jwt payload Json"));
+                .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("Invalid jwt payload Json")));
     }
 
     @Test
@@ -106,7 +107,7 @@ public class JwtValidationTest {
         mvc.perform(post("/auth/validate-jwt/with-exceptions").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
                         .isForbidden())
-                .andExpect(result -> result.getResponse().getContentAsString().contains("Invalid Name"));
+                .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("Invalid Name")));
     }
 
     @Test
@@ -116,7 +117,7 @@ public class JwtValidationTest {
         mvc.perform(post("/auth/validate-jwt/with-exceptions").contentType(MediaType.TEXT_PLAIN).content(jwt))
                 .andExpect(status()
                         .isForbidden())
-                .andExpect(result -> result.getResponse().getContentAsString().contains("Json must have 3 fields"));
+                .andExpect(result -> Assert.isTrue(result.getResponse().getContentAsString().contains("Json must have 3 fields")));
     }
 
     @Test
