@@ -1,0 +1,5 @@
+br\com\wscastro\JWTProvider\Controllers\JwtValidationApplication.class
+br\com\wscastro\JWTProvider\Services\JwtServices.class
+br\com\wscastro\JWTProvider\Services\ClaimsServices.class
+br\com\wscastro\JWTProvider\Config\SecurityConfig.class
+br\com\wscastro\JWTProvider\JwtProviderApplication.class

@@ -77,7 +77,7 @@ public class JwtValidationTest {
         // Testando nao envio do token
         mvc.perform(post("/auth/validate-jwt"))
                 .andExpect(status()
-                        .isUnauthorized());
+                        .isBadRequest());
     }
 
     @Test
