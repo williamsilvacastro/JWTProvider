@@ -12,6 +12,7 @@
 
 # Terraform image
 .terraform/
+deploy/terraform/.terraform/
 
 # Package Files #
 *.jar
