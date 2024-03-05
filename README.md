@@ -46,6 +46,8 @@ Para executar este projeto em seu ambiente local, siga os passos abaixo:
 1. **Pré-requisitos:**
    - [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html)
    - [Maven](https://maven.apache.org/)
+   - [OpenTerraform](https://developer.hashicorp.com/terraform/install)
+   - AWS Account
 
 2. **Clonar o Repositório:**
    ```bash
@@ -68,6 +70,27 @@ Para executar este projeto em seu ambiente local, siga os passos abaixo:
 ```bash
    POST http://localhost:8080/jwtprovider/auth/validate-jwt/with-exceptions
 ```
+## Como executar um deploy na sua infraestrutura AWS
+
+1- Requisitos principais:
+- Terraform instalado
+- Configure um profile aws com username = jwt-provider
+  que tenha pelo menos as seguintes politicas:
+  AmazonEC2ContainerRegistryFullAccess,
+  AmazonEC2FullAccess,	
+  AmazonVPCFullAccess,	
+  AWSMarketplaceAmiIngestion
+- path variable do terraform configurado
+2- Execute o seguinte comando na pasta raiz do projeto:
+
+```bash
+   cd ./deploy/terraform
+   terraform init
+   terraform apply
+```
+Obs.: com esse comando sendo executado ele deve provisionar toda a estrutura necessaria para rodar
+a aplicacao e a aws ira executar o script userdata.tpl para subir um docker e fazer deploy da aplicacao
+
 
 ## Contribuições e Feedback
 
