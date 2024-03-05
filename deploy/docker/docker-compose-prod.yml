@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  jwt-provider:
+    container_name: jwt-provider
+    image: wscastro/jwt-provider:0.0.1
+    environment:
+      SERVER_PORT: 8080
+      SPRING_PROFILES_ACTIVE: prod
+      TZ: "America/Sao_Paulo"
+    ports:
+      - "80:8080"
+    networks:
+      - docker-network
+    deploy:
+      resources:
+        limits:
+          memory: 700M
+        reservations:
+          memory: 700M
+    restart: always
+
+networks:
+  docker-network:
+    driver: bridge

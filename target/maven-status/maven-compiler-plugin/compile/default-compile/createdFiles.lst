@@ -1,3 +1,5 @@
+br\com\wscastro\JWTProvider\Infra\RestExceptionHandler.class
+br\com\wscastro\JWTProvider\Infra\RestErrorMessage.class
 br\com\wscastro\JWTProvider\JwtProviderApplication.class
 br\com\wscastro\JWTProvider\Controllers\JwtValidationApplication.class
 br\com\wscastro\JWTProvider\Services\JwtServices.class

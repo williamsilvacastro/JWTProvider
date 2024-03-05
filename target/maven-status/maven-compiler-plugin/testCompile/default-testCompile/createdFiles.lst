@@ -1,2 +1,4 @@
 br\com\wscastro\JWTProvider\Controllers\JwtValidationTest.class
 br\com\wscastro\JWTProvider\JwtProviderApplicationTests.class
+br\com\wscastro\JWTProvider\Services\ClaimsServicesTest.class
+br\com\wscastro\JWTProvider\Services\JwtServicesTest.class

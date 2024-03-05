@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: br.com.wscastro.JWTProvider.Services.ClaimsServicesTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in br.com.wscastro.JWTProvider.Services.ClaimsServicesTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in br.com.wscastro.JWTProvider.Services.ClaimsServicesTest
